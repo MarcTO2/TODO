@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
     'Todo',
     'accounts',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -127,3 +128,10 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGOUT_REDIRECT_URL = 'login'
+
+LOGIN_REDIRECT_URL = 'home'
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
