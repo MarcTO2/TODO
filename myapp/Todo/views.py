@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
 from Todo.models import Tasks
 
 @login_required
@@ -55,3 +56,13 @@ def search_tasks(request):
         tasks = Tasks.objects.filter(user=request.user)  # Filter tasks by current user
     context = {'tasks': tasks}
     return render(request, 'Todo/tasks.html', context)
+
+@login_required
+def update_task_completion(request, task_id):
+    if request.method == 'POST':
+        task = Tasks.objects.get(pk=task_id)
+        task.complete = not task.complete  # Toggle completion status
+        task.save()
+        return JsonResponse({'success': True})
+    return JsonResponse({'success': False})
+
