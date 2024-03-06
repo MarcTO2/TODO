@@ -10,8 +10,8 @@
 
     <title>Your Todos - Todos List</title>
   </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <body class="bg-white">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info">
       <a class="navbar-brand" href="/">TODO</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -28,13 +28,13 @@
         </ul>
         <form class="form-inline my-2 my-lg-0" action="{% url 'search_tasks' %}" method="get">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          <button class="btn btn-info my-2 my-sm-0" type="submit">Search</button>
         </form>
       </div>
     </nav>
 
-    <div class="container my-3">
-      <h2 class="text-center py-3">Here's a list of your Todos!</h2>
+    <div class="container my-3 card-body">
+      <h2 class="text-center py-3 card-title text-secondary">Here's a list of your Todos!</h2>
       <table class="table">
         <thead>
           <tr>
@@ -55,7 +55,7 @@
             <input type="checkbox" onclick="updateTaskCompletion({{ task.id }})" {% if task.complete %}checked{% endif %}> 
           </td>
           <td>
-            <a href="{% url 'edit_task' task.id %}" class="btn btn-primary btn-sm col-sm-12 col-md-6 col-lg-4 order-sm-2 offset-1">Edit</a>
+            <a href="{% url 'edit_task' task.id %}" class="btn btn-info btn-sm col-sm-12 col-md-6 col-lg-4 order-sm-2 offset-1">Edit</a>
             <!-- Delete Button -->
             <a href="{% url 'delete_task' task.id %}" class="btn btn-danger btn-sm col-sm-12 col-md-6 col-lg-4 order-sm-2 offset-1">Delete</a>
           </td>
@@ -67,7 +67,7 @@
     </div>
 
     <footer>
-      <p class="text-center bg-dark text-light fixed-bottom my-0 py-3">
+      <p class="text-center bg-info text-light fixed-bottom my-0 py-3">
       Copyright &copy; 2024 | All rights reserved
       </p>
     </footer>

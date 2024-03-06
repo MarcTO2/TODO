@@ -11,16 +11,16 @@
     <title>Log in - Todos List</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info">
       <a class="navbar-brand text-center" href="/">TODO</a>
     </nav>
-    <div class="container my-3">
+    <div class="container my-3 card card-body">
       <h1 class="card-title">Log in</h1>
       <form method="post" novalidate>
         {% csrf_token %}
         <input type="hidden" name="next" value="{{ next }}">
         {% include 'includes/form.html' %}
-        <button type="submit" class="btn btn-primary btn-block">Log in</button>
+        <button type="submit" class="btn btn-info">Log in</button>
       </form>
     </div>
     <div class="card-footer text-muted text-center">
