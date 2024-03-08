@@ -63,11 +63,11 @@
         {% csrf_token %}
         <div class="form-group">
             <label for="title" class="text-dark card-title">Title</label>
-            <input type="text" class="form-control" id="title" name="title" aria-describedby="emailHelp" placeholder="Add a Todo Here!">
+            <input type="text" class="form-control border border-info" id="title" name="title" aria-describedby="emailHelp" placeholder="Add a Todo Here!">
         </div>
         <div class="form-group">
             <label for="description" class="text-dark">Description</label>
-            <textarea class="form-control" name="description" id="description" cols="30" rows="10" placeholder="Add a Description Here!"></textarea>
+            <textarea class="form-control border border-info" name="description" id="description" cols="30" rows="10" placeholder="Add a Description Here!"></textarea>
         </div>
         <button type="submit" class="btn btn-info">Submit</button>
     </form>
