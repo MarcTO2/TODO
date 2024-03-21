@@ -15,12 +15,12 @@
       <a class="navbar-brand text-center" href="/">TODO</a>
     </nav>
     <div class="container my-3 card card-body">
-      <h1 class="card-title">Log in</h1>
+      <h1 class="card-title text-center">Log in</h1>
       <form method="post" novalidate>
         {% csrf_token %}
         <input type="hidden" name="next" value="{{ next }}">
         {% include 'includes/form.html' %}
-        <button type="submit" class="btn btn-info">Log in</button>
+        <button type="submit" class="btn btn-info btn-block">Log in</button>
       </form>
     </div>
     <div class="card-footer text-muted text-center">
@@ -32,8 +32,8 @@
         </small>
       </div>
 
-    <footer>
-      <p class="text-center bg-dark text-light fixed-bottom my-0 py-3">
+    <footer class="fixed-bottom">
+      <p class="text-center bg-info text-light my-0 py-3">
       Copyright &copy; 2024 | All rights reserved
       Made by MarcelDev
       </p>
